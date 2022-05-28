@@ -1,7 +1,6 @@
 import axios from 'axios';
 import { useState } from 'react';
 import './App.css';
-import Main from './component/Main';
 
 function App() {
 
@@ -14,8 +13,7 @@ function App() {
 
     axios({
       method: 'POST',
-      url: `https://cloudrecord.ml/bpapi/xls/upload`,
-      // url : `http://localhost:8080/xls/upload`,
+      url : `http://localhost:8080/xls/upload`,
       data: formData,
       headers: {
           'Content-Type' : 'multipart/form-data' 
@@ -31,8 +29,7 @@ function App() {
   const download = () => {
     axios({
         method: 'GET',
-        url: `https://cloudrecord.ml/bpapi/xls/download/2`,
-        // url : `http://localhost:8080/xls/download/2`,
+        url : `http://localhost:8080/xls/download/2`,
         responseType: 'blob'
     })
     .then((response) => {
